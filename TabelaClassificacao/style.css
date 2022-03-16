@@ -4,14 +4,20 @@
 
 body {
   font-family: "Roboto Mono", monospace;
-  min-height: 400px;
+  min-height: 580px;
   background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/tabela-classificacao-bg.png");
-  background-color: #111;
   background-size: 100%;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
+  background-color: #111;
+  /* 
+  
+  
+ */
 }
-
+/*http://www.internationalinside.com/wp-content/uploads/2016/02/game-players.jpg
+https://www.alura.com.br/assets/img/imersoes/dev-2021/tabela-classificacao-bg.png
+*/
 .container {
   text-align: center;
   padding: 20px;

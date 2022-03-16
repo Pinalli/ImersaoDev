@@ -5,7 +5,7 @@ function calculatePoint(player) {
     return point;
 }
 
-names.pontos = calculatePoint(alberto)
+alberto.pontos = calculatePoint(alberto)
 
 
 var players = [alberto]
