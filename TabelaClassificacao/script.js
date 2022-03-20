@@ -1,4 +1,6 @@
 var alberto = { nome: "Alberto", vitorias: 2, empates: 1, derrotas: 2, pontos: 0 } //Obejct
+var luciana = { nome: 'Luciana', vitorias: 3, empates: 2, derrotas: 1, pontos: 0 }
+
 
 function calculatePoint(player) {
     var point = (player.vitorias * 3) + player.empates
@@ -6,9 +8,9 @@ function calculatePoint(player) {
 }
 
 alberto.pontos = calculatePoint(alberto)
+luciana.pontos = calculatePoint(luciana)
 
-
-var players = [alberto]
+var players = [alberto, luciana]
 
 function displaysPlayerOnScreen(players) {
     var elem = ""
@@ -18,9 +20,9 @@ function displaysPlayerOnScreen(players) {
         elem += "<td>" + players[i].empates + "</td>"
         elem += "<td>" + players[i].derrotas + "</td>"
         elem += "<td>" + players[i].pontos + "</td>"
-        elem += "<td><button onClick='adicionarVitoria()'>Vitória</button></td>"
-        elem += "<td><button onClick='adicionarEmpate()'>Empate</button></td>"
-        elem += "<td><button onClick='adicionarDerrota()'>Derrota</button></td>"
+        elem += "<td><button onClick='adicionarVitoria(" + i + ")'>Vitória</button></td>"
+        elem += "<td><button onClick='adicionarEmpate(" + i + ")'>Empate</button></td>"
+        elem += "<td><button onClick='adicionarDerrota(" + i + ")'>Derrota</button></td>"
         elem += "</tr>"
     }
 
@@ -28,4 +30,27 @@ function displaysPlayerOnScreen(players) {
         document.getElementById("tabelaJogadores")
     tabelaJogadores.innerHTML = elem;
 }
+
 displaysPlayerOnScreen(players)
+
+
+
+function adicionarVitoria(i) {
+    var player = players[i]
+    player.vitorias++
+    player.pontos = calculatePoint(player)
+    displaysPlayerOnScreen(players)
+}
+
+function adicionarEmpate(i) {
+    var player = players[i]
+    player.empates++
+    player.pontos = calculatePoint(player)
+    displaysPlayerOnScreen(players)
+}
+
+function adicionarDerrota(i) {
+    var player = players[i]
+    player.derrotas++
+    displaysPlayerOnScreen(players)
+}
