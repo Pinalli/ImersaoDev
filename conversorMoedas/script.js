@@ -10,7 +10,7 @@ function Converter() {
     console.log(valueInReal)
 
     var valueConverted = document.getElementById("valorConvertido")
-    var result = "O resultado em Real é  R$ " + valueInReal
+    var result = "O resultado em Reais é  R$ " + valueInReal
     valueConverted.innerHTML = result
 
 }
